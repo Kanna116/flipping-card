@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color:#a2d2ff;
+    perspective: 1000px;
+
+}
+section::before{
+    content: "";
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: linear-gradient(90deg, #ffafcc,white);
+    transform: translate(-190px, -200px);
+    filter: blur(20px);
+
+}
+section::after{
+    content: "";
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: linear-gradient(90deg, #ffafcc,white);
+    transform: translate(190px, 200px);
+    filter: blur(20px);
+
+}
+.container{
+    height: 500px;
+    width: 375px;
+    position: relative;
+    z-index: 100;
+    transition: 0.9s ease-in-out;
+    transform-style:preserve-3d ;
+
+    
+}
+.container:hover{
+    transform: rotateY(180deg);
+}
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, .1);
+    backface-visibility: hidden;
+
+}
+.card-front img{
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+}
+.card-front .header{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.card-front{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.card-front .title{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.time-line{
+    width: 80%;
+    height: 3px;
+    background-color: white;
+}
+.time-line .played-time{
+    
+    width: 60%;
+    height: 3px;
+    background-color: red;
+}
+
+.controls{
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.controls span{
+    font-size: 2rem;
+}
+
+.controls div:nth-child(3){
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    background-color: white;
+
+}
+.share{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.share span{
+    font-size: 1.5rem;
+}
+
+
+/* back side  */
+.container .card-back{
+    transform: rotatey(180deg);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+   
+}
+.card-back .lyrics{
+    height: 55%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.211);
+}
+.card-back .lyrics h4{
+    font-size: 1.5rem;
+    width:  100%;
+    position: sticky;
+    top: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0 10px;
+    background-color:#bde0fe; 
+
+
+}
+.card-back .lyrics p{
+    padding: 10px;
+    margin: 0px 0 10px 0;
+    line-height: 30px;
+    
+   
+
+}
+/* Hides the scroll bar */
+.card-back .lyrics::-webkit-scrollbar{
+    display: none;
+}
+.card-back .singer{
+    height: 30%;
+    width: 80%;
+    background-image: url("images/singer.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    transition: .3s ease-in-out;
+}
+.singer:hover{
+    transform: translatey(-4px);
+    box-shadow: 0 8px 15px #000000;
+}
