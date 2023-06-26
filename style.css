@@ -194,3 +194,8 @@ section::after{
     transform: translatey(-4px);
     box-shadow: 0 8px 15px #000000;
 }
+
+@media (max-width:400){
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
